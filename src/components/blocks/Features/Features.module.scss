@@ -1,0 +1,130 @@
+@import '../../../assets/scss/breakPoints';
+
+.wrapper {
+  position: relative;
+  padding: 100px 0 70px 0;
+
+  &:after, &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background: #E1F4F8;
+    z-index: 4;
+    bottom: -100px;
+    left: 276px;
+  }
+
+  &:after {
+    width: 185px;
+    height: 185px;
+    opacity: 0.6;
+  }
+
+  &:before {
+    left: 300px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.inner {
+  display: grid;
+  grid-template-columns:minmax(450px, 500px) minmax(450px, 870px);
+  column-gap: 140px;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper_images {
+  position: absolute;
+  top: -345px;
+  right: 0;
+}
+
+
+@media only screen and (max-width: $breakpoint-laptop-1366) {
+  .wrapper_images {
+    top: -250px;
+
+    img {
+      width: 420px !important;
+      height: 615px !important;
+    }
+  }
+  .inner {
+    margin-top: 70px;
+  }
+  .wrapper {
+    &:after, &:before {
+      left: 50px;
+    }
+
+    &:after {
+      width: 140px;
+      height: 140px;
+    }
+
+    &:before {
+      left: 65px;
+      width: 76px;
+      height: 76px;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-1280) {
+  .inner {
+    column-gap: 20px;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .inner {
+    grid-template-columns: 1fr;
+    row-gap: 60px;
+  }
+
+  .wrapper_images {
+    top: 400px;
+  }
+
+  .column {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet-768) {
+  .wrapper_images {
+    img {
+      width: 300px !important;
+      height: 440px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .wrapper_images {
+    top: unset;
+    bottom: 35%;
+
+    img {
+      width: 160px !important;
+      height: 235px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-480) {
+  .inner{
+    margin: 0;
+
+  }
+  .wrapper{
+    padding: 50px 0 70px 0;
+  }
+  .wrapper_images {
+    top: unset;
+    bottom: 20%;
+  }
+}

@@ -1,0 +1,214 @@
+@import '../../../assets/scss/breakPoints';
+
+.wrapper {
+  padding: 100px 0 70px 0;
+  position: relative;
+  background: linear-gradient(180deg, #FFFFFF 15.32%, #F4F0E7 69.34%, rgba(243, 240, 233, 0.3) 91.02%);
+
+  &:after, &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+
+    top: 50%;
+    transform: translateY(-50%);
+    right: -25%;
+    background: #FABF4B;
+    z-index: 1;
+  }
+
+  &:after {
+    width: 1047px;
+    height: 1047px;
+    opacity: 0.07;
+  }
+
+  &:before {
+    width: 786px;
+    height: 786px;
+    opacity: 0.09;
+  }
+}
+
+.column {
+  position: relative;
+  z-index: 2;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(340px, 680px) minmax(300px, 870px);
+  justify-content: space-between;
+  column-gap: 40px;
+  align-items: center;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background: #FABF4B;
+    opacity: 0.2;
+    z-index: 4;
+    width: 54px;
+    height: 54px;
+    top: 100px;
+    left: 40%;
+  }
+}
+
+.text {
+  margin-top: 30px;
+  width: 640px;
+}
+
+.column {
+  margin: 0 auto;
+
+  + .column {
+    margin: 0;
+  }
+}
+
+.slider {
+  display: flex;
+  width: 925px;
+  padding-bottom: 80px;
+
+  ul {
+    gap: 30px;
+  }
+
+  button {
+    background: transparent;
+    border: 1.5px solid #FABF4B;
+    bottom: 0;
+    left: calc(44% + 1px);
+
+    + button {
+      left: unset;
+      right: calc(44% + 1px);
+    }
+
+    &:before {
+      color: #FABF4B;
+    }
+
+    &:hover {
+      background: #FABF4B;
+
+      &:before {
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+.itemSlider {
+  width: 550px !important;
+}
+
+@media only screen and (max-width: $breakpoint-laptop-1366) {
+  .wrapper {
+    &:after, &:before {
+      right: -15%;
+    }
+
+    &:after {
+      width: 830px;
+      height: 830px;
+    }
+
+    &:before {
+      width: 620px;
+      height: 620px;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-1280) {
+  .inner {
+    grid-template-columns: minmax(325px, 1280px);
+    justify-content: flex-start;
+    column-gap: 0;
+    row-gap: 40px;
+  }
+
+  .text {
+    width: 100%;
+  }
+  .slider {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .wrapper {
+    &:after, &:before {
+      top: 75%;
+      right: -15%;
+    }
+
+    &:after {
+      width: 730px;
+      height: 730px;
+    }
+
+    &:before {
+      width: 520px;
+      height: 520px;
+    }
+  }
+  .slider {
+    width: 1024px !important;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet-768) {
+.inner{
+  &:after{
+    top: -100px;
+    right: 0;
+    left: unset;
+  }
+}
+  .slider {
+    width: 100% !important;
+    max-width: 800px;
+
+    button{
+      left: calc(42% + 1px);
+
+      + button {
+        left: unset;
+        right: calc(42% + 1px);
+      }
+    }
+
+    ul {
+      gap: 20px;
+    }
+  }
+
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+
+  .slider {
+    width: 100% !important;
+
+    button{
+      left: calc(30% + 1px);
+
+      + button {
+        left: unset;
+        right: calc(30% + 1px);
+      }
+    }
+  }
+  .itemSlider {
+    width: 326px !important;
+  }
+}

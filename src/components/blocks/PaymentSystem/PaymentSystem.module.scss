@@ -1,0 +1,32 @@
+
+@import '../../../assets/scss/breakPoints';
+
+.wrapper {
+  background: linear-gradient(359.64deg, rgba(236, 248, 250, 0) 0.15%, #E7FAFD 17.05%, rgba(241, 238, 231, 0.539893) 67.07%, rgba(241, 238, 231, 0) 92.86%);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(420px, 757px) minmax(450px, 953px);
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 30px;
+}
+
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text {
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .inner {
+    grid-template-columns: 1fr;
+    row-gap: 60px;
+  }
+}

@@ -1,0 +1,186 @@
+@import '../../../assets/scss/breakPoints';
+
+.wrapper {
+  position: relative;
+  padding: 100px 0 70px 0;
+  background: rgba(241, 238, 231, 0);
+  z-index: 5;
+
+  &:after, &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background: #E1F4F8;
+    z-index: 0;
+    bottom: 0;
+    opacity: 0.2;
+  }
+
+  &:after {
+    left: 480px;
+    width: 160px;
+    height: 160px;
+  }
+
+  &:before {
+    left: 525px;
+    width: 88px;
+    height: 88px;
+  }
+}
+
+.inner{
+  display: grid;
+  grid-template-columns: 1fr minmax(500px, 870px);
+  justify-items: center;
+  align-items: center;
+  gap: 82px;
+}
+
+.wrapper_circle{
+  position: absolute;
+  left: 480px;
+  bottom: 0;
+}
+
+.wrapper_img{
+  border-radius: 45px;
+  &:before{
+    border-radius: 45px;
+  }
+}
+
+.wrapper_text {
+  position: relative;
+  z-index: 4;
+  width: 700px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 20px;
+  font-size: 22px;
+  line-height: 35px;
+  color: #5F5E5E;
+  margin-left: auto;
+}
+
+@media only screen and (max-width: $breakpoint-laptop) {
+  .wrapper{
+    &:after {
+      width: 90px;
+      height: 90px;
+    }
+
+    &:before {
+      left: 510px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .inner {
+    gap: 50px;
+  }
+
+  .wrapper_text {
+    width: 518px;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-1170) {
+  .wrapper{
+    padding-top: 50px;
+
+    &:after, &:before {
+      background: #FABF4B;
+      bottom: 105%;
+      opacity: 0.3;
+    }
+
+    &:after {
+      left: 210px;
+      width: 90px;
+      height: 90px;
+    }
+
+    &:before {
+      left: 240px;
+      width: 49px;
+      height: 49px;
+    }
+  }
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .wrapper_text {
+    max-width: 720px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-ipad) {
+  .wrapper{
+    &:after {
+      left: 80px;
+      width: 90px;
+      height: 90px;
+    }
+
+    &:before {
+      left: 110px;
+      width: 49px;
+      height: 49px;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-700) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .wrapper_text {
+    font-size: 22px;
+    line-height: 35px;
+    max-width: 100%;
+    width: 100%;
+  }
+  .wrapper_img{
+    width: 100%;
+
+    img{
+      width: 100%;
+      max-width: 620px;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .wrapper{
+    &:after, &:before {
+      bottom: 80%;
+    }
+
+    &:after {
+      left: 20px;
+      width: 70px;
+      height: 70px;
+    }
+
+    &:before {
+      left: 40px;
+      width: 38px;
+      height: 38px;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .wrapper_img{
+    border-radius: 45px;
+    &:before{
+      content: '';
+      border-radius: 25px;
+    }
+  }
+}

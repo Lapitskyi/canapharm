@@ -1,0 +1,93 @@
+@import './breakPoints.scss';
+
+.wrapper_main {
+  width: 100%;
+  max-width: 1920px;
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 35px;
+  color: #5F5E5E;
+  background: #F5F5F5;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.container {
+  padding: 0 60px;
+  width: 100%;
+}
+
+.title {
+  font-size: 42px;
+  line-height: 54px;
+  color: #011C1F;
+  text-transform: uppercase;
+}
+
+.list {
+  margin-top: 30px;
+
+  li {
+    padding-top: 20px;
+  }
+
+  li:first-child {
+    margin-top: 0;
+  }
+}
+
+.wrapper_text {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 20px;
+}
+
+.frosted_glass{
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 15px;
+  border-radius: 35px;
+  background: inherit;
+
+
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    //backdrop-filter: blur(10px);
+    border-radius: 35px;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-laptop) {
+  .container {
+    padding: 0 40px;
+  }
+  .wrapper_text{
+    font-size: 22px;
+    line-height: 35px;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-700) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+

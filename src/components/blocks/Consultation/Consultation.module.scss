@@ -1,0 +1,136 @@
+@import '../../../assets/scss/breakPoints';
+
+.wrapper {
+  position: relative;
+  padding: 100px 0 70px 0;
+  background: linear-gradient(359.64deg, rgba(236, 248, 250, 0) 0.15%, #E7FAFD 17.05%, rgba(241, 238, 231, 0.539893) 67.07%, rgba(241, 238, 231, 0) 92.86%);
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 4;
+    top: -100px;
+    left: 665px;
+    background: #E1F4F8;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(420px, 863px) minmax(450px, 764px);
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 30px;
+  position: relative;
+
+  &:after, &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 4;
+    bottom: 50px;
+    background: rgba(250, 191, 75, 0.3);
+  }
+
+  &:after {
+    right: 0;
+    width: 280px;
+    height: 280px;
+    opacity: 0.3;
+  }
+
+  &:before {
+    bottom: 80px;
+    right: 20px;
+    width: 113px;
+    height: 113px;
+    opacity: 0.45;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+
+  + .column {
+    width: 100%;
+  }
+}
+
+.text {
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: $breakpoint-laptop-1366) {
+  .wrapper {
+    &:after {
+      top: 50px;
+      left: 100px;
+    }
+  }
+  .inner {
+    &:after {
+      bottom: 0;
+      width: 241px;
+      height: 241px;
+    }
+
+    &:before {
+      bottom: 30px;
+      right: 20px;
+      width: 87px;
+      height: 87px;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .wrapper{
+    &:after{
+      top: 0;
+    }
+  }
+  .inner {
+    grid-template-columns: 1fr;
+    row-gap: 60px;
+  }
+  .wrapper_img {
+    grid-row: 2;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet-768) {
+  .wrapper {
+    &:after {
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .inner {
+    &:after, &:before {
+      bottom: unset;
+      top: 100px;
+    }
+    &:after {
+      width: 200px;
+      height: 200px;
+    }
+
+    &:before {
+      top: 200px;
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
